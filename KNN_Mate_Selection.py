@@ -1,5 +1,11 @@
 import pandas as pd
 import numpy as np
+'''
+三种特征：
+1.每年飞行里程数
+2.玩游戏所好时间
+3.每周消费的冰淇淋公升数
+'''
 #读取文件
 def file_read(file_name = './datingTestSet.txt'):
     with open(file_name,'r',encoding = 'utf-8') as file:
