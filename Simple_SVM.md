@@ -32,4 +32,14 @@ plt.scatter(*zip(*data_2))
 for k ,b in k_and_b:
     plt.plot(x,func(k,x,b))
 ```
+![Image text](https://github.com/Vihagle/AI/blob/main/image/1615543373(1).jpg)
+```python3
+#为了满足loss函数，我们需要找到w最小的函数，此时的margin最大
+final_k,final_b = sorted(k_and_b,key = lambda x:abs(x[0]))[0]
 
+#画出margin最大的分割直线
+plt.scatter(*zip(*data_1))
+plt.scatter(*zip(*data_2))
+plt.plot(x,func(final_k,x,final_b))
+```
+![Image text](https://github.com/Vihagle/AI/blob/main/image/1615543380(1).jpg)
