@@ -1,6 +1,7 @@
 ```python3
 import numpy as np
 import matplotlib.pyplot as plt
+
 #划分两堆数据点
 data_1 = np.random.normal(6,2,size = (50,2))
 data_2 = np.random.normal(-6,2,size = (50,2))
@@ -9,3 +10,26 @@ plt.scatter(*zip(*data_2))
 plt.show()
 ```
 ![Image text](https://github.com/Vihagle/AI/blob/main/image/1615543360(1).jpg)
+```python3
+#定义划分直线的线性函数
+def func(k,x,b):
+    return k*x+b
+
+#获取满足y(wx+b)>1的一系列w,b
+data_1_x = data_1[:,0]
+data_2_x = data_2[:,0]
+k_and_b = []
+for _ in range(100):
+    k,b = (np.random.random(size = (1,2))*10-5)[0]
+    if np.max(func(k,data_1_x,b))<=-1 and np.min(func(k,data_2_x,b))>=1:
+        k_and_b.append((k,b))
+print(k_and_b)
+
+#画出这些w,b所对应的分割直线
+x = np.append(data_1_x,data_2_x)
+plt.scatter(*zip(*data_1))
+plt.scatter(*zip(*data_2))
+for k ,b in k_and_b:
+    plt.plot(x,func(k,x,b))
+```
+
