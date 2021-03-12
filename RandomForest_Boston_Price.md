@@ -25,13 +25,13 @@ def main_func(X_train,X_test,y_train,y_test):
     row,weak_X_train = select_data_feature(X_train)
     model = DecisionTreeRegressor()
     model.fit(weak_X_train,y_train.iloc[row])
-    #训练集的score
+    #输出弱分类器训练集的score
     train_score = model.score(weak_X_train, y_train.iloc[row])
-    #测试集的score
+    #输出弱分类器测试集的score
     test_score = model.score(X_test[weak_X_train.columns], y_test)
     
     print('train score = {}; test score = {}'.format(train_score, test_score))
-    #获取预测的y_pred
+    #获取弱分类器预测的y_pred
     y_pred = model.predict(X_test[weak_X_train.columns])
     return y_pred
 
@@ -50,3 +50,9 @@ random_forest_pred = random_forest(X_train, X_test, y_train, y_test)
 random_forest_pred
 ```
 ![image text](https://github.com/Vihagle/AI/blob/main/image/1615548391(1).jpg)
+```python3
+#从上图可以看出每个弱分类器的表现并不好，但是如果将他们ensemble起来，会如何呢？
+from sklearn.metrics import r2_score
+r2_score(y_test, random_forest_pred)
+```
+![image text](https://github.com/Vihagle/AI/blob/main/image/1615548396(1).jpg)
