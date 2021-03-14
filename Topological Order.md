@@ -26,5 +26,13 @@ def topologic(graph):
             order.append(res)
             graph.pop(res)
     return order 
+    
+#根据上图建立Graph
+graph = {'A':'C','B':'C','C':'E','D':'E','E':'F'}
+topologic(graph)    
+```
+输出
+```python3
+['A', 'B', 'C', 'D', 'E', 'F']
 ```
 
