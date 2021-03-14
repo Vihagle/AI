@@ -25,4 +25,4 @@ def topologic(graph):
             graph.pop(res)
     return order 
 ```
-![image text](https://github.com/Vihagle/AI/blob/main/image/Topological Order.jpg)
+![image text](https://github.com/Vihagle/AI/blob/main/image/123.jpg)
