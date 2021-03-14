@@ -1,5 +1,3 @@
-![Image text](https://github.com/Vihagle/AI/blob/main/image/Topological%20Order.jpg)
-
 ```python3
 #拓扑排序函数
 def topologic(graph):
@@ -28,3 +26,4 @@ def topologic(graph):
     return order
     
 ```
+![image text](https://github.com/Vihagle/AI/blob/main/image/Topological%20Order.jpg)
