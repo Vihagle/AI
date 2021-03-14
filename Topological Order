@@ -23,7 +23,6 @@ def topologic(graph):
             #将取出来的点中放到order列表中，并将其从字典中删除
             order.append(res)
             graph.pop(res)
-    return order
-    
+    return order 
 ```
 ![image text](https://github.com/Vihagle/AI/blob/main/image/Topological%20Order.jpg)
